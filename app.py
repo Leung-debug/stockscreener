@@ -332,9 +332,7 @@ def main():
     ---
     🔒 **Disclaimer**  
     The information presented in this app is for **informational purposes only** and **does not constitute financial advice, investment recommendations, or an offer to buy or sell any stocks or securities**.  
-    Please conduct your own research and consult with a licensed financial advisor before making any investment decisions.  
-    The app is intended to display publicly available market data and does **not endorse or promote any specific stock**.
-    Users assume full responsibility for any actions taken based on the information displayed.
+    Please conduct your own research and consult with a licensed financial advisor before making any investment decisions. The app is intended to display publicly available market data and does **not endorse or promote any specific stock**. Users assume full responsibility for any actions taken based on the information displayed.
     """)
 
     st.set_page_config(page_title="Stock Screener", layout="wide")
