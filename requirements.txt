@@ -1,0 +1,9 @@
+yfinance
+pandas
+tradingview-screener==3.0.0
+webdriver-manager
+datetime
+pytz
+streamlit
+numpy
+streamlit-aggrid
