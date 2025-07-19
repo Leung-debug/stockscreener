@@ -371,7 +371,7 @@ def main():
 
     grid_options = gb.build()
 
-    AgGrid(premarket_df, gridOptions=grid_options, height=500, use_container_width=True)
+    AgGrid(premarket_df, gridOptions=grid_options, height=400, use_container_width=True)
 
     st.caption(f"Last updated: {pd.Timestamp.now(tz='US/Eastern').strftime('%Y-%m-%d %H:%M:%S')} EST")
     st.download_button("Download Pre-Market CSV", premarket_df.to_csv(index=False).encode('utf-8-sig'), "premarket_gainers.csv", "text/csv")
