@@ -305,7 +305,7 @@ def fetchMarketData():
 
     range_cols = ['1Day Range', '1W Range', '1M Range']
     low_high_cols = ['52W Low', '52W High']
-    target_cols = ['Target Mean Price', 'Target Low Price', 'Target High Price', 'Description']
+    target_cols = ['Target Mean Price', 'Target Low Price', 'Target High Price', 'Description', 'Recent News']
     
     all_cols = list(final_marketDF.columns)
     core_cols = [col for col in all_cols if col not in (range_cols + low_high_cols + target_cols)]
