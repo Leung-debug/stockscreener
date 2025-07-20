@@ -313,7 +313,7 @@ def fetchMarketData():
     new_order = core_cols + range_cols + low_high_cols + target_cols
     final_marketDF = final_marketDF[new_order]
     
-    final_marketDF = final_marketDF.sort_values(by='% Change', ascending=False)
+    final_marketDF = final_marketDF.sort_values(by='Volume', ascending=False)
 
     return final_marketDF
 
