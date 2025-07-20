@@ -153,6 +153,21 @@ def fetchPremarketData():
     yahoo_enriched_df = pd.DataFrame(enriched_data)
 
     final_df = preMarketGainers.merge(yahoo_enriched_df, how='left', left_on='Symbol', right_on='Symbol')
+
+    # Rearranging columns for display
+    range_cols = ['1Day Range', '1W Range', '1M Range']
+    low_high_cols = ['52W Low', '52W High']
+    target_cols = ['Target Mean Price', 'Target Low Price', 'Target High Price', 'Description', 'Recent News']
+
+    all_cols = list(final_df.columns)
+
+    # Preserve all original columns, but rearrange after PreMarket Volume
+    before_volume = all_cols[:all_cols.index('PreMarket Volume') + 1]
+    middle_block = range_cols + low_high_cols
+    after_block = [col for col in all_cols if col not in (before_volume + middle_block)]
+
+    final_df = final_df[before_volume + middle_block + after_block]
+    
     final_df = final_df.sort_values(by='PreMarket % Change', ascending=False)
     
     return final_df
