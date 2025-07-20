@@ -302,8 +302,19 @@ def fetchMarketData():
 
     yahoo_enriched_marketDF = pd.DataFrame(enriched_marketData)
     final_marketDF = marketGainers.merge(yahoo_enriched_marketDF, how='left', left_on='Symbol', right_on='Symbol')
-    final_marketDF = final_marketDF.sort_values(by='% Change', ascending=False)
+
+    range_cols = ['1Day Range', '1W Range', '1M Range']
+    low_high_cols = ['52W Low', '52W High']
+    target_cols = ['Target Mean Price', 'Target Low Price', 'Target High Price', 'Description']
     
+    all_cols = list(final_marketDF.columns)
+    core_cols = [col for col in all_cols if col not in (range_cols + low_high_cols + target_cols)]
+    
+    new_order = core_cols + range_cols + low_high_cols + target_cols
+    final_marketDF = final_marketDF[new_order]
+    
+    final_marketDF = final_marketDF.sort_values(by='% Change', ascending=False)
+
     return final_marketDF
 
 def format_number(num):
