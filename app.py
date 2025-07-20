@@ -353,13 +353,13 @@ def main():
 
     light_blue_style = {
         "textAlign": "center",
-        "backgroundColor": "#1f4e79",  # light blue hex code
+        "backgroundColor": "#ADD8E6",  # light blue hex code
         "fontSize": "13px"
     }
 
     dark_purple_style = {
         "textAlign": "center",
-        "backgroundColor": "#183D3D"  # dark purple hex code (Indigo)
+        "backgroundColor": "#D2B48C"  # dark purple hex code (Indigo)
     }
 
     st.markdown("Pre-Market Gainers (under $8 with >10% gain and 500k Volume)")
