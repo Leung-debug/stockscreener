@@ -408,7 +408,7 @@ def main():
     gb.configure_column("Description", maxWidth=100)
     grid_options = gb.build()
 
-    AgGrid(market_df, gridOptions=grid_options, height=400, use_container_width=True)
+    AgGrid(market_df, gridOptions=grid_options, height=550, use_container_width=True)
 
     st.caption(f"Last updated: {pd.Timestamp.now(tz='US/Eastern').strftime('%Y-%m-%d %H:%M:%S')} EST")
     st.download_button("Download Market CSV", market_df.to_csv(index=False).encode('utf-8-sig'), "market_gainers.csv", "text/csv")
